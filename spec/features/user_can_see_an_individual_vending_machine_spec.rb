@@ -8,12 +8,12 @@ feature 'When a user visits a vending machine show page' do
     snack_2 = dons.snacks.create(name: "Burger", price: 5)
 
     visit machine_path(dons)
-save_and_open_page
+
     expect(page).to have_content("Don's Mixed Drinks Vending Machine")
     expect(page).to have_content(snack_1.name)
     expect(page).to have_content(snack_1.price)
     expect(page).to have_content(snack_2.name)
     expect(page).to have_content(snack_2.price)
-    expect(page).to have_content("Average Price: 4")
+    expect(page).to have_content("Average Price: $4.0")
   end
 end
