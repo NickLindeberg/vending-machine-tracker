@@ -6,5 +6,6 @@ class MachinesController < ApplicationController
   def show
     @machine = Machine.find(params[:id])
     @machine_snacks = @machine.snacks
+    @machine_snack_avg = @machine_snacks.avg_price
   end
 end
